@@ -16,7 +16,7 @@ function Chat({ socket, username, room }) {
 
 			await socket.emit('send_message', messageData)
 			setMessageList(prev => [...prev, messageData])
-      setCurrMessage('')
+			setCurrMessage('')
 		}
 	}
 
@@ -53,14 +53,14 @@ function Chat({ socket, username, room }) {
 			<div className="chat-footer">
 				<input
 					type="text"
-          value={currMessage}
+					value={currMessage}
 					placeholder="Send Message..."
 					onChange={e => {
 						setCurrMessage(e.target.value)
 					}}
 					onKeyPress={e => {
 						e.key === 'Enter' && sendMessage()
-            setCurrMessage('') 
+						setCurrMessage('')
 					}}
 				/>
 				<button onClick={sendMessage}>&#9658;</button>
